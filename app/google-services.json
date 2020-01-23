@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "180863168711",
+    "firebase_url": "https://jadwal-uas.firebaseio.com",
+    "project_id": "jadwal-uas",
+    "storage_bucket": "jadwal-uas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180863168711:android:ac50d3a118bed367ea8ee2",
+        "android_client_info": {
+          "package_name": "com.example.firebase_uas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180863168711-dnvhiks3mn2g0mgvigiomgjpjrucgv1b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebase_uas",
+            "certificate_hash": "ae3524d0e94fa1d36bdb61295dc5f24c4defa1b4"
+          }
+        },
+        {
+          "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb95EFbUXq-NsLOEm5Tf81GekRitOe9ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180863168711:android:e1da2e1bf4fb92d6ea8ee2",
+        "android_client_info": {
+          "package_name": "com.example.jadwal_uas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180863168711-mtcf08hga7f6ah6b5at6janhtameg53t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jadwal_uas",
+            "certificate_hash": "749e6ae52d838be28637d5929453235709426fc5"
+          }
+        },
+        {
+          "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb95EFbUXq-NsLOEm5Tf81GekRitOe9ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180863168711:android:6cd4058822158966ea8ee2",
+        "android_client_info": {
+          "package_name": "com.example.project_jadwal_uas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180863168711-t42b0ggto0pc0op9qlotoj8n4l7snqhu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.project_jadwal_uas",
+            "certificate_hash": "ae3524d0e94fa1d36bdb61295dc5f24c4defa1b4"
+          }
+        },
+        {
+          "client_id": "180863168711-pe0fh1tlv897ho6r5aa2iriasqpstkmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.project_jadwal_uas",
+            "certificate_hash": "749e6ae52d838be28637d5929453235709426fc5"
+          }
+        },
+        {
+          "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb95EFbUXq-NsLOEm5Tf81GekRitOe9ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180863168711:android:9673662c50f6e68bea8ee2",
+        "android_client_info": {
+          "package_name": "nadila.jadwalujian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb95EFbUXq-NsLOEm5Tf81GekRitOe9ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180863168711-kcgsm69vd7ropecvb4nio57oj121qal6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

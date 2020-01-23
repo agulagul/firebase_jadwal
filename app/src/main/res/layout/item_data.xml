@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/singleRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/icon_status"
+            android:background="@drawable/check"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/nama_mk"
+            android:text="Nama Mata Kuliah"
+            android:textSize="20sp"
+            android:layout_marginTop="6dp"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/icon_status"
+            android:layout_toEndOf="@+id/icon_status"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/kode_ruang"
+            android:text="IOT-102"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nama_mk"
+            android:layout_alignLeft="@+id/nama_mk"
+            android:layout_alignStart="@+id/nama_mk" />
+
+        <TextView
+            android:id="@+id/tanggal"
+            android:text="2020/01/17 14:30"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kode_ruang"
+            android:layout_alignLeft="@+id/kode_ruang"
+            android:layout_alignStart="@+id/kode_ruang" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@+id/singleRow"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2" />
+
+
+</RelativeLayout>

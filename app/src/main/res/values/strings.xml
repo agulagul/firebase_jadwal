@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Cek Jadwal App</string>
+    <string name="full_name">full name</string>
+    <string name="username">username</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="nim">nim</string>
+    <string name="register">Add User</string>
+    <string name="check_jadwal">Check Jadwal</string>
+    <string name="add_jadwal">Add Jadwal</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="role">role</string>
+    <string name="admin">admin</string>
+    <string name="user">user</string>
+    <string name="welcome">Hello, %1$s!!!</string>
+    <string name="bye">Bye, %1$s!!!</string>
+    <string name="welcome_role">You logged in as %1$s.</string>
+    <string name="welcome_men">Please choose menu below</string>
+    <string name="input_error_name">name required</string>
+    <string name="input_error_username">username required</string>
+    <string name="input_error_email">email required</string>
+    <string name="input_error_password">password required</string>
+    <string name="input_error_nim">NIM required</string>
+    <string name="input_error_password_length">password should be atleast 6 characters long</string>
+    <string name="input_error_phone_invalid">enter a valid phone number</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="registration_filed">Registration Failed</string>
+    <string name="input_error_email_invalid">enter a valid email</string>
+</resources>
