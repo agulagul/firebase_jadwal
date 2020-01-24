@@ -10,12 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".CheckJadwal"></activity>
         <activity android:name=".AddJadwal" />
         <activity android:name=".DashboardAdmin" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Register" />
-        <activity android:name=".CheckJadwal">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/welcome"
-            android:id="@+id/text_welcome"
+            android:id="@+id/text_welcome_admin"
             android:textAlignment="center"
             android:textColor="@color/colorButtonTransparent"
             android:textSize="@dimen/welcome_size" />
@@ -42,7 +42,7 @@
             android:fontFamily="sans-serif-black"
             android:text="@string/welcome_role"
             android:textAlignment="center"
-            android:id="@+id/text_welcome_role"
+            android:id="@+id/text_welcome_role_admin"
             android:textColor="@color/colorButtonTransparent"
             android:textSize="@dimen/welcome_size" />
 
@@ -55,6 +55,16 @@
             android:textAlignment="center"
             android:textColor="@color/colorButtonTransparent"
             android:textSize="@dimen/welcome_size" />
+
+        <Button
+            android:id="@+id/button_add_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorButtonTransparent"
+            android:onClick="button_add_user_Click"/>
 
         <Button
             android:id="@+id/button_check_jadwal_admin"
@@ -73,7 +83,7 @@
             android:text="@string/add_jadwal"
             android:textAllCaps="false"
             android:textColor="@color/colorButtonTransparent"
-            android:onClick="button_logout_Click"/>
+            android:onClick="button_add_jadwal_Click"/>
 
         <Button
             android:id="@+id/button_logout_admin"
