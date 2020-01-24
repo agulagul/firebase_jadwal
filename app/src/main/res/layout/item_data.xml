@@ -7,20 +7,22 @@
         android:id="@+id/singleRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="@dimen/default_padding">
 
         <ImageView
             android:id="@+id/icon_status"
             android:background="@drawable/check"
             android:layout_width="60dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/default_padding"/>
 
         <TextView
             android:id="@+id/nama_mk"
             android:text="Nama Mata Kuliah"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:layout_marginTop="6dp"
-            android:maxLines="1"
+            android:maxLines="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -32,6 +34,7 @@
         <TextView
             android:id="@+id/kode_ruang"
             android:text="IOT-102"
+            android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             android:maxLines="1"
             android:layout_width="match_parent"
@@ -56,8 +59,8 @@
     <View
         android:layout_below="@+id/singleRow"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f2f2f2" />
+        android:layout_height="8dp"
+        android:background="#B9B9B9" />
 
 
 </RelativeLayout>

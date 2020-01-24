@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JadwalData {
-    public String tanggal, kodemk, namamk, koderuang, status;
+    public String tanggal, kode_mk, nama_mk, kode_ruang, status;
 
     public  JadwalData(){
 
@@ -12,9 +12,9 @@ public class JadwalData {
 
     public JadwalData(String tanggal, String kodemk, String namamk, String koderuang, String status) {
         this.tanggal = tanggal;
-        this.kodemk = kodemk;
-        this.namamk = namamk;
-        this.koderuang = koderuang;
+        this.kode_mk = kodemk;
+        this.nama_mk = namamk;
+        this.kode_ruang = koderuang;
         this.status = status;
     }
 
@@ -27,27 +27,27 @@ public class JadwalData {
     }
 
     public String getKodemk() {
-        return kodemk;
+        return kode_mk;
     }
 
     public void setKodemk(String kodemk) {
-        this.kodemk = kodemk;
+        this.kode_mk = kodemk;
     }
 
     public String getNamamk() {
-        return namamk;
+        return nama_mk;
     }
 
     public void setNamamk(String namamk) {
-        this.namamk = namamk;
+        this.nama_mk = namamk;
     }
 
     public String getKoderuang() {
-        return koderuang;
+        return kode_ruang;
     }
 
     public void setKoderuang(String koderuang) {
-        this.koderuang = koderuang;
+        this.kode_ruang = koderuang;
     }
 
     public String getStatus() {
@@ -61,9 +61,9 @@ public class JadwalData {
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
         result.put("tanggal", tanggal);
-        result.put("nama_mk", namamk);
-        result.put("kode_mk", kodemk);
-        result.put("kode_ruang", koderuang);
+        result.put("nama_mk", nama_mk);
+        result.put("kode_mk", kode_mk);
+        result.put("kode_ruang", kode_ruang);
         result.put("status", status);
         return result;
     }

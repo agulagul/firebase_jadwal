@@ -41,7 +41,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void button_check_jadwal_Click(View view) {
-        Intent intent = new Intent(Dashboard.this, Jadwal.class);
+        Intent intent = new Intent(Dashboard.this, CheckJadwal.class);
         startActivity(intent);
     }
 
