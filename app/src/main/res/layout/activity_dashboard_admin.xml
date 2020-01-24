@@ -70,7 +70,6 @@
             android:id="@+id/button_check_jadwal_admin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_padding"
             android:text="@string/check_jadwal"
             android:textAllCaps="false"
             android:textColor="@color/colorButtonTransparent"
