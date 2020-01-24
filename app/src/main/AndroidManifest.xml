@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.firebase_uas">
 
-    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +12,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".CheckJadwal"></activity>
         <activity android:name=".AddJadwal" />
-        <activity android:name=".DashboardAdmin" />
-        <activity android:name=".Dashboard" />
+        <activity android:name=".Dashboard"/>
+        <activity android:name=".DashboardAdmin"/>
         <activity android:name=".Register" />
         <activity android:name=".Login">
             <intent-filter>
