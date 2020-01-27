@@ -79,7 +79,7 @@ public class HomeUser extends AppCompatActivity {
         bundle.putString("email", user.getEmail());
         bundle.putString("nim", user.getNim());
         bundle.putString("password", user.getPassword());
-        bundle.putString("role", user.getPassword());
+        bundle.putString("role", user.getRole());
         Intent intent = new Intent(HomeUser.this, Profile.class);
         intent.putExtras(bundle);
         progressBar.setVisibility(View.GONE);

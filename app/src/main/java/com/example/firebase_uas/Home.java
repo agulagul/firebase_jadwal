@@ -99,7 +99,7 @@ public class Home extends AppCompatActivity {
         bundle.putString("email", user.getEmail());
         bundle.putString("nim", user.getNim());
         bundle.putString("password", user.getPassword());
-        bundle.putString("role", user.getPassword());
+        bundle.putString("role", user.getRole());
         Toast.makeText(Home.this, "Login Success", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Home.this, Profile.class);
         intent.putExtras(bundle);

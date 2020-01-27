@@ -41,12 +41,12 @@ public class Profile extends AppCompatActivity {
 
         Typeface Mlight = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-light.ttf");
         Typeface Mregular = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-regular.ttf");
-        Typeface Mmedium = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-medium.ttf");
 
         fullname.setTypeface(Mlight);
         username.setTypeface(Mlight);
         nim.setTypeface(Mlight);
         email.setTypeface(Mlight);
+        role.setTypeface(Mlight);
         textTitle.setTypeface(Mregular);
 
         if(getIntent().getExtras()!=null){

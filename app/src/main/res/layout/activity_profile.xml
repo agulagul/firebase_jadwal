@@ -93,7 +93,6 @@
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/role"
-            android:inputType="textPassword"
             android:maxLines="1"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"

@@ -22,12 +22,12 @@ public class User {
         this.role = role;
     }
 
-    @PropertyName("nama")
+    @PropertyName("name")
     public String getName() {
         return name;
     }
 
-    @PropertyName("nama")
+    @PropertyName("name")
     public void setName(String name) {
         this.name = name;
     }
