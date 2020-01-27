@@ -35,7 +35,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/admin"
         android:textSize="24sp"
-        android:textColor="@color/colorText"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/profileIcon"/>
     <TextView
@@ -46,7 +46,7 @@
         android:layout_marginTop="0dp"
         android:text="@string/admin"
         android:textSize="18sp"
-        android:textColor="@color/colorText"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@id/profileIcon"
         app:layout_constraintTop_toBottomOf="@id/textName"
         />

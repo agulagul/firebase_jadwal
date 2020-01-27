@@ -43,7 +43,6 @@ public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_jadwal);
-        setContentView(R.layout.item_data);
 
         textTitle = findViewById(R.id.text_Title);
 
@@ -79,7 +78,7 @@ public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickL
     }
 
     @Override
-    public void onClick(int position) {
+    public void onLongClick(int position) {
         String tanggal = listJadwal.get(position).getTanggal();
         String nama_mk = listJadwal.get(position).getNamamk();
         String kode_mk = listJadwal.get(position).getKodemk();
@@ -131,6 +130,26 @@ public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickL
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, kode_ruang)
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
 //                .putExtra(Intent.EXTRA_EMAIL, "rowan@example.com,trevor@example.com");
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(int position) {
+        String tanggal = listJadwal.get(position).getTanggal();
+        String nama_mk = listJadwal.get(position).getNamamk();
+        String kode_mk = listJadwal.get(position).getKodemk();
+        String kode_ruang = listJadwal.get(position).getKoderuang();
+        String status = listJadwal.get(position).getStatus();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("tanggal", tanggal);
+        bundle.putString("nama_mk", nama_mk);
+        bundle.putString("kode_mk", kode_mk);
+        bundle.putString("kode_ruang", kode_ruang);
+        bundle.putString("status", status);
+
+        Intent intent = new Intent(CheckJadwal.this, EditJadwal.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

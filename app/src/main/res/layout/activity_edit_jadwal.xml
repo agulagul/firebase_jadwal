@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".Register">
+    tools:context=".EditJadwal">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -18,87 +18,85 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/add_user"/>
+            android:src="@drawable/addevent"/>
 
         <TextView
             android:id="@+id/text_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:text="Add User"
+            android:text="@string/edit_jadwal"
             android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/app_name_size" />
 
         <EditText
-            android:id="@+id/edit_text_name"
+            android:id="@+id/edit_text_kodemk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_padding"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/full_name"
             android:maxLines="1"
-            android:nextFocusDown="@id/edit_text_username"
+            android:maxLength="9"
+            android:hint="@string/kode_mk"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@id/edit_text_namamk"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_font_download_black_24dp"/>
 
         <EditText
-            android:id="@+id/edit_text_username"
+            android:id="@+id/edit_text_namamk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/username"
+            android:hint="@string/nama_mk"
+            android:inputType="textCapWords"
             android:maxLines="1"
-            android:nextFocusDown="@id/edit_text_email"
+            android:nextFocusDown="@id/edit_text_koderuang"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_account_box_black_24dp"/>
+            android:drawableStart="@drawable/ic_font_download_black_24dp"/>
         <EditText
-            android:id="@+id/edit_text_nim"
+            android:id="@+id/edit_text_koderuang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/nim"
-            android:inputType="number"
-            android:maxLength="8"
+            android:hint="@string/kode_ruang"
+            android:inputType="textCapWords"
             android:maxLines="1"
-            android:nextFocusDown="@id/edit_text_email"
+            android:nextFocusDown="@id/edit_text_tanggal"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_looks_one_black_24dp"/>
 
 
         <EditText
-            android:id="@+id/edit_text_email"
+            android:id="@+id/edit_text_tanggal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/email"
-            android:maxLines="1"
-            android:inputType="textEmailAddress"
-            android:nextFocusDown="@id/edit_text_password"
+            android:hint="@string/tanggal"
+            android:inputType="date"
+            android:nextFocusDown="@id/edit_text_waktu"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_email_black_24dp"/>
-
+            android:drawableStart="@drawable/ic_date_range_black_24dp"/>
 
         <EditText
-            android:id="@+id/edit_text_password"
+            android:id="@+id/edit_text_waktu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/drawable_padding"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:nextFocusDown="@id/rbAdmin"
+            android:hint="@string/waktu"
+            android:inputType="time"
+            android:nextFocusDown="@id/rbSudah"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_vpn_key_black_24dp"/>
-
+            android:drawableStart="@drawable/ic_access_time_black_24dp"/>
 
         <RadioGroup
+            android:id="@+id/groupStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -106,47 +104,66 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:layout_marginStart="5dp"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/small_size"
-                android:drawableStart="@drawable/ic_group_black_24dp"/>
+                android:drawableStart="@drawable/ic_turned_in_not_black_24dp"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rbAdmin"
+                android:id="@+id/rbSudah"
                 android:layout_marginStart="@dimen/default_padding"
-                android:text="@string/admin"
+                android:text="@string/sudah"
                 android:textColor="@color/colorText"
-                android:buttonTint="@color/colorText"/>
+                android:buttonTint="@color/colorText"
+                />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rbUser"
+                android:id="@+id/rbBelum"
                 android:layout_marginStart="@dimen/default_padding"
-                android:text="@string/user"
+                android:text="@string/belum"
                 android:textColor="@color/colorText"
                 android:buttonTint="@color/colorText"/>
 
         </RadioGroup>
 
-        <Button
-            android:id="@+id/button_register"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textAllCaps="false"
-            android:background="@drawable/button"
-            android:textColor="@color/colorPrimaryDark"
-            android:onClick="button_register_Click"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="20dp">
+
+            <Button
+                android:id="@+id/button_edit_jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:text="@string/edit_jadwal"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:onClick="button_edit_jadwal_Click"/>
+
+            <Button
+                android:id="@+id/button_hapus_jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/button"
+                android:onClick="button_edit_hapus_Click"
+                android:text="@string/hapus"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <ProgressBar
-        android:id="@+id/progressbar"
+        android:id="@+id/progressbarAddJadwal"
         android:layout_below="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

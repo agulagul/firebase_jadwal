@@ -11,7 +11,6 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="@dimen/default_padding">
@@ -28,7 +27,7 @@
             android:fontFamily="sans-serif-black"
             android:text="@string/add_jadwal"
             android:textAlignment="center"
-            android:textColor="@color/colorButtonTransparent"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/app_name_size" />
 
         <EditText
@@ -37,10 +36,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_padding"
             android:drawablePadding="@dimen/drawable_padding"
+            android:maxLines="1"
+            android:maxLength="9"
             android:hint="@string/kode_mk"
             android:inputType="textCapWords"
             android:nextFocusDown="@id/edit_text_namamk"
-            android:textColor="@color/colorButtonTransparent"
+            android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_font_download_black_24dp"/>
 
@@ -51,8 +52,9 @@
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/nama_mk"
             android:inputType="textCapWords"
+            android:maxLines="1"
             android:nextFocusDown="@id/edit_text_koderuang"
-            android:textColor="@color/colorButtonTransparent"
+            android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_font_download_black_24dp"/>
         <EditText
@@ -62,8 +64,9 @@
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/kode_ruang"
             android:inputType="textCapWords"
+            android:maxLines="1"
             android:nextFocusDown="@id/edit_text_tanggal"
-            android:textColor="@color/colorButtonTransparent"
+            android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_looks_one_black_24dp"/>
 
@@ -74,11 +77,24 @@
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/tanggal"
-            android:inputType="datetime"
-            android:nextFocusDown="@id/button_add_jadwal"
-            android:textColor="@color/colorButtonTransparent"
+            android:inputType="date"
+            android:nextFocusDown="@id/edit_text_waktu"
+            android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_date_range_black_24dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_waktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/waktu"
+            android:inputType="time"
+            android:nextFocusDown="@id/button_add_jadwal"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"/>
+
 
         <Button
             android:id="@+id/button_add_jadwal"

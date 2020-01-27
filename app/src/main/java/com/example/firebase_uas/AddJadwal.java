@@ -22,7 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddJadwal extends AppCompatActivity {
     private TextView textTitle;
     private Button buttonAddjAdwal;
-    private EditText etkodemk, etnamamk, etkoderuang, ettanggal;
+    private RadioButton rbSudah, rbBelum;
+    private EditText etkodemk, etnamamk, etkoderuang, ettanggal, etwaktu;
     private String datetime = "";
     private ProgressBar progressBar;
     private JadwalData jadwalData;
@@ -38,29 +39,35 @@ public class AddJadwal extends AppCompatActivity {
         etnamamk = findViewById(R.id.edit_text_namamk);
         etkoderuang = findViewById(R.id.edit_text_koderuang);
         ettanggal = findViewById(R.id.edit_text_tanggal);
+        etwaktu = findViewById(R.id.edit_text_waktu);
         progressBar = findViewById(R.id.progressbarAddJadwal);
         progressBar.setVisibility(View.GONE);
         textTitle = findViewById(R.id.text_Title);
         buttonAddjAdwal = findViewById(R.id.button_add_jadwal);
+        rbSudah = findViewById(R.id.rbSudah);
+        rbBelum = findViewById(R.id.rbBelum);
 
         Typeface Mlight = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-light.ttf");
         Typeface Mregular = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-regular.ttf");
         Typeface Mmedium = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-medium.ttf");
 
         textTitle.setTypeface(Mregular);
+        etwaktu.setTypeface(Mlight);
         ettanggal.setTypeface(Mlight);
         etkoderuang.setTypeface(Mlight);
         etnamamk.setTypeface(Mlight);
         etkodemk.setTypeface(Mlight);
         buttonAddjAdwal.setTypeface(Mmedium);
+        rbSudah.setTypeface(Mlight);
+        rbBelum.setTypeface(Mlight);
+
+        jadwalData = new JadwalData();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference().child("jadwal");
     }
 
     public void button_add_jadwal_Click(View view) {
-
-        System.out.println(etkodemk.getText().toString());
         jadwalData.setKodemk(etkodemk.getText().toString());
         jadwalData.setKoderuang(etkoderuang.getText().toString());
         jadwalData.setNamamk(etnamamk.getText().toString());
@@ -69,30 +76,35 @@ public class AddJadwal extends AppCompatActivity {
         jadwalData.setStatus("BELUM");
 
         if (jadwalData.getKodemk().isEmpty()) {
-            etkodemk.setError(getString(R.string.input_error_name));
+            etkodemk.setError(getString(R.string.input_error_kodemk));
             etkodemk.requestFocus();
             return;
         }
 
         if (jadwalData.getNamamk().isEmpty()) {
-            etnamamk.setError(getString(R.string.input_error_name));
+            etnamamk.setError(getString(R.string.input_error_namamk));
             etnamamk.requestFocus();
             return;
         }
 
         if (jadwalData.getKoderuang().isEmpty()) {
-            etkoderuang.setError(getString(R.string.input_error_name));
+            etkoderuang.setError(getString(R.string.input_error_koderuang));
             etkoderuang.requestFocus();
             return;
         }
 
-
         if (jadwalData.getTanggal().isEmpty()) {
-            ettanggal.setError(getString(R.string.input_error_email));
-            ettanggal.requestFocus();
-            return;
+            if(ettanggal.getText().toString().isEmpty()){
+                ettanggal.setError(getString(R.string.input_error_tanggal));
+                ettanggal.requestFocus();
+                return;
+            }
+            if(etwaktu.getText().toString().isEmpty()){
+                etwaktu.setError(getString(R.string.input_error_waktu));
+                etwaktu.requestFocus();
+                return;
+            }
         }
-
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -100,14 +112,14 @@ public class AddJadwal extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(AddJadwal.this, R.string.registration_success, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddJadwal.this, R.string.addJadwal_success, Toast.LENGTH_SHORT).show();
                     etkodemk.setText("");
                     etkoderuang.setText("");
                     etnamamk.setText("");
                     ettanggal.setText("");
                     progressBar.setVisibility(View.GONE);
                 }else{
-                    Toast.makeText(AddJadwal.this, R.string.registration_filed, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddJadwal.this, R.string.addJadwal_filed, Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }

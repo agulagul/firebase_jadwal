@@ -38,11 +38,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
 
-//        Typeface Mlight = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-light.ttf");
-//        Typeface Mmedium = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-medium.ttf");
-//        viewHolder.tvNamaMK.setTypeface(Mmedium);
-//        viewHolder.tvTanggal.setTypeface(Mlight);
-//        viewHolder.tvKodeRuang.setTypeface(Mlight);
+        Typeface Mlight = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-light.ttf");
+        Typeface Mmedium = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-medium.ttf");
+        viewHolder.tvNamaMK.setTypeface(Mmedium);
+        viewHolder.tvTanggal.setTypeface(Mlight);
+        viewHolder.tvKodeRuang.setTypeface(Mlight);
         return viewHolder;
     }
 
@@ -82,6 +82,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     mListener.onClick(getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+                    mListener.onLongClick(getAdapterPosition());
+                    return false;
                 }
             });
         }
