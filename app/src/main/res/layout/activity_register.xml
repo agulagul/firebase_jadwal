@@ -92,7 +92,7 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:nextFocusDown="@id/rbAdmin"
+            android:nextFocusDown="@id/radioAdmin"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
             android:drawableStart="@drawable/ic_vpn_key_black_24dp"/>
@@ -115,7 +115,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rbAdmin"
+                android:id="@+id/radioAdmin"
                 android:layout_marginStart="@dimen/default_padding"
                 android:text="@string/admin"
                 android:textColor="@color/colorText"
@@ -124,7 +124,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rbUser"
+                android:id="@+id/radioUser"
                 android:layout_marginStart="@dimen/default_padding"
                 android:text="@string/user"
                 android:textColor="@color/colorText"

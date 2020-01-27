@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EditJadwal extends AppCompatActivity {
     private TextView textTitle;
-    private Button buttonEdit, buttonHapus;
+    private Button buttonEdit;
     private RadioButton rbSudah, rbBelum;
     private RadioGroup groupStatus;
     private EditText etkodemk, etnamamk, etkoderuang, ettanggal, etwaktu;
@@ -44,7 +44,6 @@ public class EditJadwal extends AppCompatActivity {
         rbSudah = findViewById(R.id.rbSudah);
         rbBelum = findViewById(R.id.rbBelum);
         buttonEdit = findViewById(R.id.button_edit_jadwal);
-        buttonHapus = findViewById(R.id.button_hapus_jadwal);
         groupStatus = findViewById(R.id.groupStatus);
 
         Typeface Mlight = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-light.ttf");
@@ -58,7 +57,6 @@ public class EditJadwal extends AppCompatActivity {
         etnamamk.setTypeface(Mlight);
         etkodemk.setTypeface(Mlight);
         buttonEdit.setTypeface(Mmedium);
-        buttonHapus.setTypeface(Mmedium);
 
         jadwalData = new JadwalData();
 

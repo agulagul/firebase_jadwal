@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddJadwal extends AppCompatActivity {
     private TextView textTitle;
     private Button buttonAddjAdwal;
-    private RadioButton rbSudah, rbBelum;
     private EditText etkodemk, etnamamk, etkoderuang, ettanggal, etwaktu;
     private String datetime = "";
     private ProgressBar progressBar;
@@ -44,8 +43,6 @@ public class AddJadwal extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         textTitle = findViewById(R.id.text_Title);
         buttonAddjAdwal = findViewById(R.id.button_add_jadwal);
-        rbSudah = findViewById(R.id.rbSudah);
-        rbBelum = findViewById(R.id.rbBelum);
 
         Typeface Mlight = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-light.ttf");
         Typeface Mregular = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-regular.ttf");
@@ -58,8 +55,6 @@ public class AddJadwal extends AppCompatActivity {
         etnamamk.setTypeface(Mlight);
         etkodemk.setTypeface(Mlight);
         buttonAddjAdwal.setTypeface(Mmedium);
-        rbSudah.setTypeface(Mlight);
-        rbBelum.setTypeface(Mlight);
 
         jadwalData = new JadwalData();
 

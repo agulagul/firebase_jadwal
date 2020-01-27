@@ -40,8 +40,8 @@ public class Register extends AppCompatActivity {
         nim = findViewById(R.id.edit_text_nim);
         email = findViewById(R.id.edit_text_email);
         password = findViewById(R.id.edit_text_password);
-        rbAdmin = findViewById(R.id.rbAdmin);
-        rbUser = findViewById(R.id.rbUser);
+        rbAdmin = findViewById(R.id.radioAdmin);
+        rbUser = findViewById(R.id.radioUser);
         textTitle = findViewById(R.id.text_Title);
         buttonRegister = findViewById(R.id.button_register);
         progressBar = findViewById(R.id.progressbar);
