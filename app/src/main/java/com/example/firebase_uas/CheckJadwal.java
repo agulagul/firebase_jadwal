@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.AlarmClock;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,7 +33,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickListener{
-
+    private TextView textTitle;
     private DatabaseReference databaseReference;
     List<JadwalData> listJadwal = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -40,6 +43,13 @@ public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_jadwal);
+        setContentView(R.layout.item_data);
+
+        textTitle = findViewById(R.id.text_Title);
+
+        Typeface Mregular = Typeface.createFromAsset(getAssets(), "fonts/mplus-1mn-regular.ttf");
+
+        textTitle.setTypeface(Mregular);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -72,32 +82,55 @@ public class CheckJadwal extends AppCompatActivity implements RecyclerViewClickL
     public void onClick(int position) {
         String tanggal = listJadwal.get(position).getTanggal();
         String nama_mk = listJadwal.get(position).getNamamk();
+        String kode_mk = listJadwal.get(position).getKodemk();
+        String kode_ruang = listJadwal.get(position).getKoderuang();
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-        Date date = null;
+        Date datetime = null;
+        int year = 0;
+        int month = 0;
         int day = 0;
         int hour = 0;
         int minutes = 0;
-        String alarm = null;
+        String date = null;
         try {
-            date = dateFormat.parse(tanggal);
-            SimpleDateFormat dateFormatDay = new SimpleDateFormat("u");
-            day = Integer.parseInt(dateFormatDay.format(date));
+            datetime = dateFormat.parse(tanggal);
+            SimpleDateFormat dateFormatDay = new SimpleDateFormat("yyyy/MM/dd");
+            date = dateFormatDay.format(datetime);
+            year = Integer.parseInt(date.split("/")[0]);
+            month = Integer.parseInt(date.split("/")[1]);
+            day = Integer.parseInt(date.split("/")[2]);
             SimpleDateFormat dateFormatHour = new SimpleDateFormat("HH");
-            hour = Integer.parseInt(dateFormatHour.format(date));
+            hour = Integer.parseInt(dateFormatHour.format(datetime));
             SimpleDateFormat dateFormatMinutes = new SimpleDateFormat("mm");
-            minutes = Integer.parseInt(dateFormatMinutes.format(date));
-            SimpleDateFormat dateFormatAlarm = new SimpleDateFormat("EEEE HH:mm");
-            alarm = dateFormatAlarm.format(date);
+            minutes = Integer.parseInt(dateFormatMinutes.format(datetime));
+//            SimpleDateFormat dateFormatAlarm = new SimpleDateFormat("EEEE HH:mm");
+//            alarm = dateFormatAlarm.format(datetime);
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
-        intent.putExtra(AlarmClock.EXTRA_DAYS, day);
-        intent.putExtra(AlarmClock.EXTRA_HOUR, hour);
-        intent.putExtra(AlarmClock.EXTRA_MINUTES, minutes);
-        intent.putExtra(AlarmClock.EXTRA_MESSAGE, nama_mk);
-        Toast.makeText(this, "Alarm set on " + alarm, Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+//        intent.putExtra(AlarmClock.EXTRA_DAYS, day);
+//        intent.putExtra(AlarmClock.EXTRA_HOUR, hour);
+//        intent.putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+//        intent.putExtra(AlarmClock.EXTRA_MESSAGE, nama_mk);
+//        Toast.makeText(this, "Alarm set on " + alarm, Toast.LENGTH_SHORT).show();
+//        startActivity(intent);
+
+        Calendar beginTime = Calendar.getInstance();
+        beginTime.set(year, month-1, day, hour, minutes);
+        Calendar endTime = Calendar.getInstance();
+        endTime.set(year, month-1, day, hour, minutes+15);
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                .putExtra(CalendarContract.Events.TITLE, nama_mk)
+                .putExtra(CalendarContract.Events.DESCRIPTION, tanggal)
+                .putExtra(CalendarContract.Events.EVENT_LOCATION, kode_ruang)
+                .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
+//                .putExtra(Intent.EXTRA_EMAIL, "rowan@example.com,trevor@example.com");
         startActivity(intent);
     }
 }

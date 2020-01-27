@@ -1,6 +1,8 @@
 package com.example.firebase_uas;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.media.MediaMetadata;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,11 +30,19 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         this.mListener = listener;
     }
 
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+
+//        Typeface Mlight = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-light.ttf");
+//        Typeface Mmedium = Typeface.createFromAsset(viewHolder.itemView.getContext().getAssets(), "fonts/mplus-1mn-medium.ttf");
+//        viewHolder.tvNamaMK.setTypeface(Mmedium);
+//        viewHolder.tvTanggal.setTypeface(Mlight);
+//        viewHolder.tvKodeRuang.setTypeface(Mlight);
         return viewHolder;
     }
 
@@ -42,8 +52,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         holder.tvNamaMK.setText(jadwal.getNamamk());
         holder.tvKodeRuang.setText(jadwal.getKoderuang());
         holder.tvTanggal.setText(jadwal.getTanggal());
+
         if(jadwal.getStatus().equals("SUDAH")){
-            holder.iconStatus.setImageResource(R.drawable.check);
+            holder.iconStatus.setImageResource(R.drawable.tick);
         }
         if(jadwal.getStatus().equals("BELUM")){
             holder.iconStatus.setImageResource(R.drawable.cross);

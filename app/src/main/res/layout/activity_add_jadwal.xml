@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".AddJadwal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/default_padding">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/addevent"/>
+
+        <TextView
+            android:id="@+id/text_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/add_jadwal"
+            android:textAlignment="center"
+            android:textColor="@color/colorButtonTransparent"
+            android:textSize="@dimen/app_name_size" />
+
+        <EditText
+            android:id="@+id/edit_text_kodemk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/kode_mk"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@id/edit_text_namamk"
+            android:textColor="@color/colorButtonTransparent"
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_font_download_black_24dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_namamk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/nama_mk"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@id/edit_text_koderuang"
+            android:textColor="@color/colorButtonTransparent"
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_font_download_black_24dp"/>
+        <EditText
+            android:id="@+id/edit_text_koderuang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/kode_ruang"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@id/edit_text_tanggal"
+            android:textColor="@color/colorButtonTransparent"
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_looks_one_black_24dp"/>
+
+
+        <EditText
+            android:id="@+id/edit_text_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:hint="@string/tanggal"
+            android:inputType="datetime"
+            android:nextFocusDown="@id/button_add_jadwal"
+            android:textColor="@color/colorButtonTransparent"
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_date_range_black_24dp"/>
+
+        <Button
+            android:id="@+id/button_add_jadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:text="@string/add_jadwal"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:onClick="button_add_jadwal_Click"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbarAddJadwal"
+        android:layout_below="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

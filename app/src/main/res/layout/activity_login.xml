@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".Login">
 
     <LinearLayout
@@ -11,10 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:gravity="center"
         android:padding="@dimen/default_padding">
 
-        <TextView
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/check"/>
 
+        <TextView
+            android:id="@+id/text_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
@@ -27,12 +35,13 @@
             android:id="@+id/edit_text_username_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_padding"
+            android:layout_marginTop="40dp"
             android:drawablePadding="@dimen/drawable_padding"
             android:hint="@string/username"
             android:nextFocusDown="@id/edit_text_email"
             android:textColor="@color/colorButtonTransparent"
-            android:textColorHint="@color/colorHint" />
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_account_box_black_24dp"/>
 
 
         <EditText
@@ -44,16 +53,19 @@
             android:inputType="textPassword"
             android:nextFocusDown="@id/button_register"
             android:textColor="@color/colorButtonTransparent"
-            android:textColorHint="@color/colorHint" />
+            android:textColorHint="@color/colorHint"
+            android:drawableStart="@drawable/ic_vpn_key_black_24dp"/>
 
 
         <Button
             android:id="@+id/button_login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
             android:text="@string/login"
             android:textAllCaps="false"
-            android:textColor="@color/colorButtonTransparent"
+            android:textColor="@color/colorPrimaryDark"
             android:onClick="button_login_Click"/>
 
     </LinearLayout>
@@ -62,7 +74,7 @@
         android:id="@+id/progressbar_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

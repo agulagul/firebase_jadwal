@@ -5,6 +5,11 @@
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="nim">nim</string>
+    <string name="kode_mk">kode mata kuliah</string>
+    <string name="nama_mk">nama mata kuliah</string>
+    <string name="kode_ruang">kode ruang</string>
+    <string name="tanggal">tanggal</string>
+    <string name="waktu">waktu</string>
     <string name="register">Add User</string>
     <string name="check_jadwal">Check Jadwal</string>
     <string name="add_jadwal">Add Jadwal</string>
