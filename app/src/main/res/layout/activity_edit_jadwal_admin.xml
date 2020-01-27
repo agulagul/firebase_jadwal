@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".EditJadwal">
+    tools:context=".EditJadwalAdmin">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -43,8 +43,7 @@
             android:nextFocusDown="@id/edit_text_namamk"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_font_download_black_24dp"
-            android:enabled="false"/>
+            android:drawableStart="@drawable/ic_font_download_black_24dp"/>
 
         <EditText
             android:id="@+id/edit_text_namamk"
@@ -57,9 +56,7 @@
             android:nextFocusDown="@id/edit_text_koderuang"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_font_download_black_24dp"
-            android:enabled="false"/>
-
+            android:drawableStart="@drawable/ic_font_download_black_24dp"/>
         <EditText
             android:id="@+id/edit_text_koderuang"
             android:layout_width="match_parent"
@@ -71,8 +68,8 @@
             android:nextFocusDown="@id/edit_text_tanggal"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_looks_one_black_24dp"
-            android:enabled="false"/>
+            android:drawableStart="@drawable/ic_looks_one_black_24dp"/>
+
 
         <EditText
             android:id="@+id/edit_text_tanggal"
@@ -84,8 +81,7 @@
             android:nextFocusDown="@id/edit_text_waktu"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_date_range_black_24dp"
-            android:enabled="false"/>
+            android:drawableStart="@drawable/ic_date_range_black_24dp"/>
 
         <EditText
             android:id="@+id/edit_text_waktu"
@@ -97,8 +93,7 @@
             android:nextFocusDown="@id/rbSudah"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorHint"
-            android:drawableStart="@drawable/ic_access_time_black_24dp"
-            android:enabled="false"/>
+            android:drawableStart="@drawable/ic_access_time_black_24dp"/>
 
         <RadioGroup
             android:id="@+id/groupStatus"
@@ -152,16 +147,16 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:onClick="button_edit_jadwal_Click"/>
 
-<!--            <Button-->
-<!--                android:id="@+id/button_hapus_jadwal"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:background="@drawable/button"-->
-<!--                android:onClick="button_edit_hapus_Click"-->
-<!--                android:text="@string/hapus"-->
-<!--                android:textAllCaps="false"-->
-<!--                android:textColor="@color/colorPrimaryDark" />-->
+            <Button
+                android:id="@+id/button_hapus_jadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/button"
+                android:onClick="button_edit_hapus_Click"
+                android:text="@string/hapus"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
 

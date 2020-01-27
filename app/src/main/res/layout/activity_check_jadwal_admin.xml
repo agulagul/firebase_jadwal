@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/header"
+    tools:context=".CheckJadwalAdmin">
+
+    <TextView
+        android:id="@+id/text_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List Jadwal"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:layout_marginBottom="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_jadwal">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

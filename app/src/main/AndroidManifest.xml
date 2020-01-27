@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditJadwal"></activity>
+        <activity android:name=".Profile"></activity>
+        <activity android:name=".CheckJadwalAdmin" />
+        <activity android:name=".EditJadwalAdmin" />
+        <activity android:name=".EditJadwal" />
         <activity android:name=".HomeUser" />
         <activity android:name=".Home" />
         <activity android:name=".CheckJadwal" />

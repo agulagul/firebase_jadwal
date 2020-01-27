@@ -16,7 +16,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class EditJadwal extends AppCompatActivity {
+public class EditJadwalAdmin extends AppCompatActivity {
+
     private TextView textTitle;
     private Button buttonEdit, buttonHapus;
     private RadioButton rbSudah, rbBelum;
@@ -31,7 +32,7 @@ public class EditJadwal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_jadwal);
+        setContentView(R.layout.activity_edit_jadwal_admin);
 
         etkodemk = findViewById(R.id.edit_text_kodemk);
         etnamamk = findViewById(R.id.edit_text_namamk);
@@ -111,13 +112,13 @@ public class EditJadwal extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         databaseReference.child(jadwalData.getKodemk()).setValue(jadwalData);
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(EditJadwal.this, R.string.editJadwal_success, Toast.LENGTH_SHORT).show();
+        Toast.makeText(EditJadwalAdmin.this, R.string.editJadwal_success, Toast.LENGTH_SHORT).show();
     }
 
     public void button_edit_hapus_Click(View view) {
         progressBar.setVisibility(View.VISIBLE);
         databaseReference.child(jadwalData.getKodemk()).removeValue();
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(EditJadwal.this, R.string.hapusJadwal_success, Toast.LENGTH_SHORT).show();
+        Toast.makeText(EditJadwalAdmin.this, R.string.editJadwal_success, Toast.LENGTH_SHORT).show();
     }
 }

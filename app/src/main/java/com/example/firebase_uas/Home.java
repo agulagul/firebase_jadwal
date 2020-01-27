@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 public class Home extends AppCompatActivity {
 
     TextView textName, textEmail, textAddJadwal, textAddUser, textCheckJadwal, textLogout, textMainMenu;
-    private String username, fullname, email, nim, password, role;
+    private User user;
     private ProgressBar progressBar;
 
     @Override
@@ -46,38 +46,64 @@ public class Home extends AppCompatActivity {
         textCheckJadwal.setTypeface(Mlight);
         textMainMenu.setTypeface(Mmedium);
 
+        user = new User();
+
         if(getIntent().getExtras()!=null){
             Bundle bundle = getIntent().getExtras();
-            username = bundle.getString("username");
-            fullname = bundle.getString("fullname");
-            email = bundle.getString("email");
-            nim = bundle.getString("nim");
-            password = bundle.getString("password");
-            role = bundle.getString("role");
+            user.setUsername(bundle.getString("username"));
+            user.setName(bundle.getString("fullname"));
+            user.setEmail(bundle.getString("email"));
+            user.setNim(bundle.getString("nim"));
+            user.setPassword(bundle.getString("password"));
+            user.setRole(bundle.getString("role"));
 
-            textName.setText(fullname);
-            textEmail.setText(email);
+            textName.setText(user.getName());
+            textEmail.setText(user.getEmail());
         }
     }
 
     public void iconAddJadwal_click(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         Intent intent = new Intent(Home.this, AddJadwal.class);
+        progressBar.setVisibility(View.GONE);
         startActivity(intent);
     }
 
     public void iconAddUser_click(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         Intent intent = new Intent(Home.this, Register.class);
+        progressBar.setVisibility(View.GONE);
         startActivity(intent);
     }
 
     public void iconCheckJadwal_click(View view) {
-        Intent intent = new Intent(Home.this, CheckJadwal.class);
+        progressBar.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(Home.this, CheckJadwalAdmin.class);
+        progressBar.setVisibility(View.GONE);
         startActivity(intent);
     }
 
     public void iconLogout_click(View view) {
-        Toast.makeText(Home.this, getString(R.string.bye, fullname), Toast.LENGTH_SHORT).show();
+        progressBar.setVisibility(View.VISIBLE);
+        Toast.makeText(Home.this, getString(R.string.bye, user.getName()), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Home.this, Login.class);
+        progressBar.setVisibility(View.GONE);
+        startActivity(intent);
+    }
+
+    public void profileIcon_click(View view) {
+        progressBar.setVisibility(View.VISIBLE);
+        Bundle bundle = new Bundle();
+        bundle.putString("username", user.getUsername());
+        bundle.putString("fullname", user.getName());
+        bundle.putString("email", user.getEmail());
+        bundle.putString("nim", user.getNim());
+        bundle.putString("password", user.getPassword());
+        bundle.putString("role", user.getPassword());
+        Toast.makeText(Home.this, "Login Success", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Home.this, Profile.class);
+        intent.putExtras(bundle);
+        progressBar.setVisibility(View.GONE);
         startActivity(intent);
     }
 }
